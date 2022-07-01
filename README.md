@@ -9,3 +9,4 @@
  2.PHP+ThinkPHP框架
  3.MySQL+Ajax
  4.微信小程序开发官方文档
+![首页](https://github.com/Yq2Yz/media/blob/main/index.png)
