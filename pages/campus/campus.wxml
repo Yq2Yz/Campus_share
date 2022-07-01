@@ -1,0 +1,20 @@
+<!--pages/campus/campus.wxml-->
+<view class='wrapper'>
+  <view class='title'>校园帖子资讯</view>
+  <view class='campus'>
+
+  <!-- 滑动区域 -->
+    <scroll-view scroll-y >
+      <block wx:for="{{campusData}}"  wx:key="campusData">
+        <view class='campus-item'>
+            <image src='{{item.url}}' class='campus-image'></image>
+            <view class='campus-cont'>
+            <view class='article-title'>{{item.title}}</view>
+            <view>{{item.author}}</view>
+            <view>{{item.time}}</view>
+            </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

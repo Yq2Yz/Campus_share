@@ -1,0 +1,61 @@
+<navigator class="top" url="mySetting/mySetting">
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='btn-logn'>
+        <image class="userinfo-avatar" src="{{my_ava}}" background-size="cover"></image>
+        <text class="userinfo-nickname" style='margin-left:-140rpx;'>{{my_name}}</text>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </button>
+    <view wx:else>请升级微信版本</view>
+</navigator>
+
+<!-- 下半部分：我的发布、我的收藏、消息中心 -->
+<view class="center_box">
+    <navigator url="myPost/myPost" class="center_1">
+        <image src="/images/post.png"></image>
+        <view>我的发布</view>
+    </navigator>
+    <navigator url="myPost/myPost" class="center_1">
+        <image src="/images/collect.png"></image>
+        <view>我的收藏</view>
+    </navigator>
+    <navigator url="../message/message" class="center_1">
+        <image src="/images/message.png"></image>
+        <view>我的消息</view>
+    </navigator>
+</view>
+<!-- 分隔线 -->
+<view class="blank"></view>
+
+<!-- 功能区 -->
+<view class="weui-cells weui-cells_after-title">
+    <!-- 我的发布 -->
+    <navigator url="myPost/myPost" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <image src="/images/post.png" style="width: 60rpx;height: 60rpx;"></image>
+        <view class="weui-cell__bd">我的发布</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <!-- 我的订单 -->
+    <navigator url="myorder/myorder" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <image src="/images/order.png" style="width: 50rpx;height: 50rpx;"></image>
+        <view class="weui-cell__bd">我的订单</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <!-- 地址管理 -->
+    <navigator url="addressAdmin/addressAdmin" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <image src="/images/address.png" style="width: 50rpx;height: 50rpx;"></image>
+        <view class="weui-cell__bd">地址管理</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <!-- 购物车 -->
+    <navigator url="myCart/myCart" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <image src="/images/cart.png" style="width: 50rpx;height: 50rpx;"></image>
+        <view class="weui-cell__bd">购物车</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <!-- 联系我们 -->
+    <navigator url="contactUs/contactUs" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <image src="/images/contact.png" style="width: 50rpx;height: 50rpx;"></image>
+        <view class="weui-cell__bd">联系我们</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <button class="btm" bindtap='bindClear'>退出帐号</button>
+</view>

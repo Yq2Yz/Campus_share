@@ -1,0 +1,29 @@
+<!--pages/classify/job/job.wxml-->
+
+<view class='job-wrapper'>
+    <view class='job-tip'>温馨提示：平台兼职信息为本校学生所发，信息真实性请与发布者核实后报名，凡收取费用的兼职请谨慎报名，以防被骗</view>
+
+    <view class='job-school'>武夷学院学生兼职</view>
+    <block wx:if="{{jobMessage.length>0}}">
+        <scroll-view scroll-y class='scroll-job' bindscrolltolower="loadMore">
+            <block wx:for="{{jobMessage}}" wx:key="jobMessage">
+                <view class='job-box' bindtap='toDetail' data-id='{{item.jid}}'>
+                    <view class='job-top'>
+                        <text class="job-title">{{item.jobname}}</text>
+                        <text class="job-jianzhi">兼职</text>
+                    </view>
+                    <text class='job-place'>{{item.jobplace}}</text>
+                    <text class='job-time'>{{item.jobtime}}</text>
+                    <text class='job-require'>{{item.jobrequir}}</text>
+                    <text class='job-treat'>{{item.jobsalary}}</text>
+                </view>
+            </block>
+        </scroll-view>
+    </block>
+    <block wx:else>
+        <view class="nocontent">
+            <image src="../../../images/blank.png"></image>
+            <view class="blank_text">这里空空如也~</view>
+        </view>
+    </block>
+</view>

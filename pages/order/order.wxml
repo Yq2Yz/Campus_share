@@ -1,0 +1,39 @@
+<!--pages/order/order.wxml-->
+<import src="../order-list/order-list.wxml"></import>
+<view class='containter'>
+  <view class='session-tab'>
+    <text class="tab-name {{showRentList ? 'tab-select' : 'tab-normal'}}" data-tab-id='rentList' bindtap='selectTap'>闲置租用</text>
+    <text class="tab-name {{showSellList ? 'tab-select' : 'tab-normal'}}" data-tab-id='sellList' bindtap='selectTap'>低价购买</text>
+  </view>
+  <view class='session-movie'>
+    <view class='session-content'>
+
+                      <!-- 出租物品租用订单 -->
+      <block wx:if="{{showRentList}}">
+        <scroll-view scroll-y class='scroll-movie' bindscrolltolower="loadMore">
+          <block wx:for="{{rentList.messages}}" wx:key="messages">
+            <!-- 引入模板，并将遍历的值=传入,
+        注意：在该页声明引入的模板 -->
+            <template is="order-list1" data="{{...item}}"></template> 
+          </block>
+          <view wx:if="{{isRentShow}}" class='bottom'>到底了，没有了</view>
+        </scroll-view>
+      </block>
+      
+                     <!-- 出售物品购买订单 -->
+      <block wx:if="{{showSellList}}">
+        <scroll-view scroll-y class='scroll-movie' bindscrolltolower="loadMore">
+          <block wx:for="{{sellList.messages}}" wx:key="messages">
+            <!-- 引入模板，并将遍历的值=传入,
+        注意：在该页声明引入的模板 -->
+            <template is="order-list2" data="{{...item}}"></template>
+          </block>
+          <view wx:if="{{isSellShow}}" class='bottom'>到底了，没有了</view>
+        </scroll-view>
+      </block>
+    
+    </view>
+    
+  </view>
+  
+</view>

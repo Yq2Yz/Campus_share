@@ -1,0 +1,30 @@
+<!--pages/message/message.wxml-->
+<block wx:if="{{showdata.length>0}}">
+    <scroll-view class='scbg' scroll-y="true">
+        <block wx:for-items="{{showdata}}" wx:for-item="itemName" wx:for-index="id">
+            <view class='box'>
+                <view class='firstblock'>
+                    <view class="tel">
+                        <text class="showtime">{{itemName.send_timestamp}}</text>
+                    </view>
+                </view>
+                <view class='secondblock'>
+                    <text class='content'>{{itemName.content}}</text>
+                </view>
+                <view class='thirdblock'>
+                    <view class='combination'>
+                        <image class="like" src="/images/like.png"></image>
+                        <text class='num'>{{itemName.total_likes}}</text>
+                    </view>
+                    <view class='del' bindtap='del' data-id='{{itemName.id}}' id='{{itemName.id}}'>删除</view>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+</block>
+<block wx:else>
+    <view class="nocontent">
+        <image src="../../images/blank.png"></image>
+        <view class="blank_text">这里空空如也~</view>
+    </view>
+</block>

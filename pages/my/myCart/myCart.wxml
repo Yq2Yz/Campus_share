@@ -1,0 +1,76 @@
+<!--pages/shoppingCart/shoppingCart.wxml-->
+<view class='box'>
+  <view class='wrapper'>
+    <view class="tab-content {{selectRent? 'select': 'noSelect'}}" bindtap='chooseRentCart'>租用</view>
+    <view class="tab-content {{selectSell? 'select': 'noSelect'}}" bindtap='chooseSellCart'>购买</view>
+  </view>
+</view>
+
+                    <!-- 闲置出租物品 -->
+<view class="cart-box" wx:if="{{selectRent}}">
+  <!-- wx:for 渲染购物车列表 -->
+  <view wx:for="{{rentCarts}}" wx:key="rentCarts" class='cart-goods'>
+    <!-- wx:if 是否选择显示不同图标 -->
+     <view class='icon-wrapper' bindtap="selectListRent" data-index="{{index}}">
+    <icon wx:if="{{item.selected}}" class='cart-icon' type="success" color="red"  />
+    <icon wx:else type="circle" class='cart-icon'  />
+    </view>
+
+    <view  class='cart-img'>
+      <image class="cart-thumb" src="{{item.rpicture}}"></image>
+      <view class='cart-message'>
+        <text class="name">{{item.rname}}</text>
+        <text class="author">楼栋：{{item.goodsCampus}}</text>
+        <text class='author'>成色：{{item.goodsConditions}}</text>
+        <text class='author'>发布者：{{item.usersname}}</text>
+        <text class='price'>￥{{item.rprice}}/天</text>
+      </view>
+    </view>
+    <!-- 点击商品图片可跳转到商品详情 -->
+
+    <!-- 删除按钮 -->
+    <text bindtap="deleteListRent" data-index="{{index}}" class='delete'> × </text>
+  </view>
+  <view wx:if="{{isRentCartShow}}" class='bottom'>没有物品啦~_~</view>
+</view>
+ 
+                <!-- 低价出售物品 -->
+<view class="cart-box" wx:if="{{selectSell}}">
+  <!-- wx:for 渲染购物车列表 -->
+  <view wx:for="{{sellCarts}}" wx:key="sellCarts" class='cart-goods'>
+    <!-- wx:if 是否选择显示不同图标 -->
+     <view class='icon-wrapper' bindtap="selectListSell" data-index="{{index}}">
+    <icon wx:if="{{item.selected}}" class='cart-icon' type="success" color="red"  />
+    <icon wx:else type="circle" class='cart-icon'  />
+    </view>
+
+    <view  class='cart-img'>
+      <image class="cart-thumb" src="{{item.spicture}}"></image>
+      <view class='cart-message'>
+        <text class="name">{{item.sname}}</text>
+        <text class="author">楼栋：{{item.goodsCampus}}</text>
+        <text class='author'>成色：{{item.goodsConditions}}</text>
+        <text class='author'>发布者：{{item.usersname}}</text>
+        <text class='price'>￥{{item.sprice}}</text>
+      </view>
+    </view>
+    <!-- 点击商品图片可跳转到商品详情 -->
+    
+    <!-- 删除按钮 -->
+    <text bindtap="deleteListSell" data-index="{{index}}" class='delete'> × </text>
+  </view>
+  <view wx:if="{{isSellCartShow}}" class='bottom'>没有物品啦~_~</view>
+</view>
+
+
+<!-- 底部操作栏 -->
+<view class='cart-bottom'>
+  <!-- wx:if 是否全选显示不同图标 -->
+  <icon wx:if="{{selectAllStatus}}" class='cart-iconAll' type="success_circle" color="red" bindtap="selectAll" />
+  <icon wx:else type="circle" class='cart-iconAll' color="#ff7100" bindtap="selectAll" />
+  <text class='cart-allSelect' bindtap="selectAll">全选</text>
+  <!-- 总价 -->
+  <text class='cart-allPrice'>合计:</text>
+  <text class='allPrice'>￥{{totalPrice}}</text>
+  <button class='btn-red' bindtap='toBuy' form-type='submit'>去结算</button>
+</view>

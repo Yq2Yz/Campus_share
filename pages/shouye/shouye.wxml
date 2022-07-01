@@ -1,0 +1,78 @@
+<!--pages/shouye/shouye.wxml-->
+
+<import src="../components/recommend/recommend.wxml"></import>
+
+<!-- 首页的轮播图 -->
+<swiper indicator-dots indicator-active-color="#f4c903" circular autoplay interval="3000">
+  <block wx:for="{{swiperList}}" wx:key="lbid">
+    <swiper-item>
+      <image src="{{item.lbpicture}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 搜索框 -->
+<view class='sousuo' bindtap='bindSearchThing' >
+  <image src='/images/sousuo.png'></image>
+</view>
+
+<!-- 通知栏的模板 -->
+<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+ <block wx:for="{{msgList}}" wx:key="msgList">
+    <navigator url="/pages/campus/campus?title={{item.url}}" open-type="switchTab">
+      <swiper-item>
+         <view class="swiper_item">{{item.title}}</view>
+       </swiper-item>
+     </navigator>
+ </block>
+</swiper>
+
+<!-- 功能模块 -->
+<view class='fenlei'>
+              <!-- 闲置出租 -->
+  <navigator url='../sonShouye/movie-more/movie-more' class='navi navi-zahuopu'>
+    <view class='leibie fenlei-zahuopu'>
+      <image src='../../images/fenlei/zahuopu.png'></image>
+      <view>闲置出租</view>
+    </view>
+  </navigator>
+             <!-- 低价出售 -->
+  <navigator url='../sonShouye/movie-more/movie-more' class='navi navi-jishou'>
+    <view class='leibie fenlei-jishou'>
+      <image src='../../images/fenlei/jishou.png'></image>
+      <view>低价出售</view>
+    </view>
+  </navigator>
+               <!-- 学生兼职 -->
+  <navigator url='../classify/job/job' class='navi navi-jianzhi'>
+    <view class='leibie fenlei-jianzhi'>
+      <image src='../../images/fenlei/jianzhi.png'></image>
+      <view>学生兼职</view>
+    </view>
+  </navigator>
+               <!-- 失物招领 -->
+  <navigator open-type="switchTab" url='../lost/lost' class='navi navi-gongyi'>
+    <view class='leibie fenlei-gongyi'>
+      <image src='../../images/fenlei/swzl.png'></image>
+      <view>失物招领</view>
+    </view>
+  </navigator>
+               <!-- 其他（分类） -->
+  <navigator url='../sonShouye/movie-more/movie-more' class='navi navi-gongyi'>
+    <view class='leibie fenlei-gongyi'>
+      <image src='../../images/fenlei/other.png'></image>
+      <view>其他</view>
+    </view>
+  </navigator>
+</view> 
+               <!-- 猜你喜欢 -->
+<view class='tuijian-img'>
+  <text class='tuijian-cont'>猜你喜欢(❤ ω ❤)</text>
+  <image src='../../images/tuijian.png'></image>
+</view>
+
+<!--  推荐好物-->
+ <template is="recommend" class="tuijian-temp" data="{{rentList,sellList}}"/>
+
+
+

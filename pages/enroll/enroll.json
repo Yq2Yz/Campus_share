@@ -1,0 +1,7 @@
+{
+    "usingComponents": {},
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "小程序注册",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+}

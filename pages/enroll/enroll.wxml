@@ -1,0 +1,26 @@
+<!--pages/enroll/enroll.wxml-->
+<view class="top-bg"></view>
+<view class="contain">
+    <view class="card">
+        <view class="title">校园生活共享小程序注册</view>
+        <view class="contact">
+            <input type="text" value="{{username}}" placeholder="用户名" placeholder-class="pache" bindblur="usernameInput">{{username}}</input>
+        </view>
+        <view class="contact">
+            <input type="number" value='{{phone}}' placeholder="手机号" placeholder-class="pache" bindblur="phoneInput">{{phone}}</input>
+        </view>
+        <view class="contact">
+            <input type="password" value='{{password}}' placeholder="输入您的密码" placeholder-class="pache" bindblur="passwordInput" password="{{true}}">{{password}}</input>
+        </view>
+        <view class="contact">
+            <input type="password" value='{{passwordack}}' placeholder="确认密码" placeholder-class="pache" bindblur="passwordInputAck" password="{{true}}">{{passwordack}}</input>
+        </view>
+    </view>
+
+    <!-- <button class="confirm" disabled="{{username == ''||phone == ''||password == ''||passwordack == ''||buttonLoading ? true : false}}" loading="{{buttonLoading}}" bindtap="bindRegist">点击注册</button> -->
+    <button class="confirm" disabled="{{is_disabled}}" bindtap="bindRegist">点击注册</button>
+
+    <view class="cha" bindtap='signin'>
+        <text class="no">已有账号，点我登录</text>
+    </view>
+</view>

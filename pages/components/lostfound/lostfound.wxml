@@ -1,0 +1,10 @@
+<!--pages/components/lostfound/lostfound.wxml-->
+<template name="lostfound">
+<view class="textarea">
+  <textarea placeholder="发条失物招领信息吧~" placeholder-style="color:#888888; font-size: 38rpx;" class='textinput' maxlength='-1' bindinput ="bindTextAreaBlur" />
+</view>
+
+<view id="btn" class="click" disabled="{{is_disabled}}" bindtap="send">发送</view>
+
+<!-- <button type="primary" size="default" disabled="{{detail == ''||buttonLoadingLost ? true : false}}" loading="{{buttonLoadingLost}}" bindtap="send"> 立即发布 </button> -->
+</template>

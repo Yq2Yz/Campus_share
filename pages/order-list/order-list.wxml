@@ -1,0 +1,29 @@
+<!--pages/movie-list/movie-list.wxml-->
+
+<template name="order-list1">
+ <view class='movie-wrapper' bindtap='toRentDetail' data-id='{{rid}}'>
+   <view class='movie-content'>
+      <image class='poster' src='{{rpicture}}'></image>
+      <view class='movie-summary'>
+        <text class="name">{{rname}}</text>
+       <text class='wish-count'>卖家：{{usersname}}</text>
+        <text class='genres'>电话：{{phone}}</text>  
+        <text class='price'>￥{{rprice}}/天</text>
+      </view>
+   </view>
+ </view>
+</template>
+<template name="order-list2">
+ <view class='movie-wrapper' bindtap='toSellDetail' data-id='{{sid}}'>
+   <view class='movie-content'>
+      <image class='poster' src='{{spicture}}'></image>
+      <view class='movie-summary'>
+        <text class="name">{{sname}}</text>
+        <text class='casts'>卖家：{{usersname}}</text>
+        <text class='casts'>电话：{{phone}}</text>      
+        <text class='price'>￥{{sprice}}</text>
+       
+      </view>
+   </view>
+ </view>
+</template>

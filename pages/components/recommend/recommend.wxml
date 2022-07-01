@@ -1,0 +1,49 @@
+<!--pages/components/recommend/recommend.wxml-->
+
+<template name="recommend">
+  <view class='cont'>
+             <!-- 闲置出租导航 -->
+    <view class='session-page'>
+      <view class='session-header'>
+        <text class='header-title'>闲置出租</text>
+        <text class='header-more' bindtap='bindToMore' data-type-id='rentList'>更多></text>
+      </view>
+             <!-- 出租列表 -->
+      <view class='session-content'>
+        <scroll-view scroll-x="ture" class='movie-scroll'>
+          <block wx:for="{{rentList}}" wx:key="rentList">
+            <view class='movie-wrapper' bindtap='toThingsDetail' data-id='{{item.rid}}'>
+              <view class='movie-content'>
+                <image class='poster' src='{{item.rpicture}}'></image>
+                <text class='name'>{{item.rname}}</text>
+                <text class='wish-count'>￥{{item.rprice}}/天</text>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+               <!-- 低价出售导航 -->
+    <view class='session-page'>
+      <view class='session-header'>
+        <text class='header-title'>低价出售</text>
+        <text class='header-more' bindtap='bindToMore' data-type-id='sellList'>更多></text>
+      </view>
+                 <!-- 出售列表 -->
+      <view class='session-content'>
+        <scroll-view scroll-x="ture" class='movie-scroll'>
+          <block wx:for="{{sellList}}" wx:key="sellList">
+            <view class='movie-wrapper' bindtap='toSellDetail' data-id='{{item.sid}}'>
+              <view class='movie-content'>
+                <image class='poster' src='{{item.spicture}}'></image>
+                <text class='name'>{{item.sname}}</text>
+                <text class='wish-count'>￥{{item.sprice}}</text>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+
+  </view>
+</template>

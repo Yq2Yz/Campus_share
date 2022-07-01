@@ -1,0 +1,55 @@
+<!--pages/movie-more/movie-more.wxml-->
+
+<view class='containter'>
+    <view class='session-tab'>
+        <text class="tab-name {{showRentList ? 'tab-select' : 'tab-normal'}}" data-tab-id='rentList' bindtap='selectTap'>闲置出租</text>
+        <text class="tab-name {{showSellList ? 'tab-select' : 'tab-normal'}}" data-tab-id='sellList' bindtap='selectTap'>低价出售</text>
+    </view>
+
+    <view class='session-movie'>
+        <view class='session-content'>
+            <!-- 闲置出租 -->
+            <block wx:if="{{showRentList}}">
+                <scroll-view scroll-y class='scroll-movie' bindscrolltolower="loadMore">
+                    <block wx:for="{{rentList.messages}}" wx:key="messages">
+                        <view class='movie-wrapper' bindtap='toThingDetail' data-id='{{item.rid}}'>
+                            <view class='movie-content'>
+                                <image class='poster' src='{{item.rpicture}}'></image>
+                                <view class='movie-summary'>
+                                    <text class="name">{{item.rname}}</text>
+                                    <text class="directors">楼栋：{{item.goodscampus}}</text>
+                                    <text class='casts'>成色：{{item.goodsconditions}}</text>
+                                    <text class='casts'>发布者：{{item.usersname}}</text>
+                                    <text class='price'>￥{{item.rprice}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <view wx:if="{{isRentShow}}" class='bottom'>到底了，没有了</view>
+                </scroll-view>
+            </block>
+
+            <!-- 低价出售 -->
+            <block wx:if="{{showSellList}}">
+                <scroll-view scroll-y class='scroll-movie' bindscrolltolower="loadMore">
+                    <block wx:for="{{sellList.messages}}" wx:key="messages">
+                        <view class='movie-wrapper' bindtap='toSellDetail' data-id='{{item.sid}}'>
+                            <view class='movie-content'>
+                                <image class='poster' src='{{item.spicture}}'></image>
+                                <view class='movie-summary'>
+                                    <text class="name">{{item.sname}}</text>
+                                    <text class="directors">楼栋：{{item.goodscampus}}</text>
+                                    <text class='casts'>成色：{{item.goodsconditions}}</text>
+                                    <text class='casts'>发布者：{{item.usersname}}</text>
+                                    <text class='price'>￥{{item.sprice}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <view wx:if="{{isSellShow}}" class='bottom'>到底了，没有了</view>
+                </scroll-view>
+            </block>
+
+        </view>
+    </view>
+</view>

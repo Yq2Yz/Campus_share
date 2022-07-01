@@ -1,0 +1,81 @@
+{
+    "pages": [
+        "pages/shouye/shouye",
+        "pages/my/mySetting/mySetting",
+        "pages/enroll/enroll",
+
+        "pages/shoppingCart/shoppingCart",
+        "pages/my/my",
+
+        "pages/logs/logs",
+        "pages/release/release",
+        "pages/order/order",
+        "pages/post/post",
+        "pages/components/recommend/recommend",
+        "pages/sonShouye/movie-more/movie-more",
+
+        "pages/my/myPost/myPost",
+        "pages/my/myorder/myorder",
+        "pages/my/addressAdmin/addressAdmin",
+        "pages/my/myCart/myCart",
+        "pages/my/contactUs/contactUs",
+
+        "pages/classify/thing-search/thing-search",
+        "pages/classify/job/job",
+        "pages/classify/jobDetail/jobDetail",
+        "pages/thing-detail/thing-detail",
+        "pages/sell-detail/sell-detail",
+        "pages/search-thing-result/search-thing-result",
+        
+        "pages/lost/lost",
+        "pages/message/message",
+        "pages/campus/campus"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#0489B1",
+        "backgroundTextStyle": "dark",
+        "navigationBarTitleText": "武院乐享",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#efefef",
+        "onReachBottomDistance": 50
+    },
+    "tabBar": {
+        "list": [
+            {
+                "text": "首页",
+                "pagePath": "pages/shouye/shouye",
+                "iconPath": "images/tabBar/home.png",
+                "selectedIconPath": "images/tabBar/home-active.png"
+            },
+            {
+                "text": "失物招领",
+                "pagePath": "pages/lost/lost",
+                "iconPath": "images/tabBar/lost.png",
+                "selectedIconPath": "images/tabBar/lost-act.png"
+            },
+            {
+                "text": "发布",
+                "pagePath": "pages/post/post",
+                "iconPath": "images/tabBar/publish.png",
+                "selectedIconPath": "images/tabBar/publish-active.png"
+            },
+            {
+                "text": "校园帖子",
+                "pagePath": "pages/campus/campus",
+                "iconPath": "images/tabBar/campus.png",
+                "selectedIconPath": "images/tabBar/campus-active.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "pages/my/my",
+                "iconPath": "images/tabBar/my.png",
+                "selectedIconPath": "images/tabBar/my-active.png"
+            }
+        ],
+        "color": "#000000",
+        "selectedColor": "#1E68C9"
+    },
+    "debug": true,
+    "sitemapLocation": "sitemap.json"
+}

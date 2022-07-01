@@ -1,0 +1,19 @@
+<!--pages/Setting/Setting.wxml-->
+<view class="top-bg"></view>
+<view class="contain">
+    <view class="card">
+        <view class="title">校园生活共享小程序认证</view>
+        <view class="contact">
+            <input value='{{phone}}' placeholder="请输入您的手机号" placeholder-class="pache" bindblur="ipnutPhone">{{phone}}
+            </input>
+        </view>
+        <view class="contact">
+            <input type="number" value='{{password}}' placeholder="输入您的密码" placeholder-class="pache" bindblur="inputPassWord" password="{{true}}">{{password}}</input>
+        </view>
+    </view>
+    <button class="confirm" disabled="{{phone == ''||password == ''||buttonLoading ? true : false}}" loading="{{buttonLoading}}" bindtap="bindSubmit">点击认证</button>
+
+    <view class="cha" bindtap='signup'>
+        <text class="no">还没有账号？点我注册</text>
+    </view>
+</view>
